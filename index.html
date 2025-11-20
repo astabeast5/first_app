@@ -1,7 +1,56 @@
 <!DOCTYPE html>
-<html>
-  <head><title>My First App</title></head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Interactive App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <p>Welcome to my first interactive web app.</p>
+
+  <button id="clickButton">Click Me!</button>
+
+  <div id="result">Nothing happened yet...</div>
+
+  <script>
+    // Get the button and result elements
+    const button = document.getElementById('clickButton');
+    const result = document.getElementById('result');
+
+    // Add a click event listener
+    button.addEventListener('click', function() {
+      result.innerText = '🎉 You clicked me! This is JavaScript in action!';
+      button.innerText = 'You clicked me!';
+      button.disabled = true; // Prevent multiple clicks
+    });
+  </script>
+</body>
 </html>
